@@ -428,16 +428,21 @@ height:200px;
 
 <script>
 const fades = document.querySelectorAll('.fade');
-window.addEventListener('scroll', ()=>{
-fades.forEach(el=>{
-const top = el.getBoundingClientRect().top;
-if(top < window.innerHeight - 100){
-el.classList.add('show');
+
+function reveal() {
+    fades.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add('show');
+        }
+    });
 }
-});
-});
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
 </script>
 
 </body>
 
 </html>
+
