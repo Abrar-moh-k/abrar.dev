@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تصميم صفحة هبوط احترافية | Abrar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--primary:#d4af37;
+--gold-light:#f6d365;
+--bg:#0b1120;
+--card:#111827;
+--card-2:#1e293b;
+--text-muted:rgba(255,255,255,.7);
+}
+
+body{
+font-family:'Cairo',sans-serif;
+background:linear-gradient(180deg,#0b1120,#0f172a);
+color:#fff;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:90px 7%;
+position:relative;
+}
+
+h1,h2,h3{
+font-weight:900;
+letter-spacing:.5px;
+}
+
+h2{
+font-size:34px;
+margin-bottom:20px;
+text-align:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+radial-gradient(circle at 20% 20%,rgba(212,175,55,.15),transparent 40%),
+radial-gradient(circle at 80% 80%,rgba(212,175,55,.08),transparent 40%),
+#0b1120;
+}
+
+.hero h1{
+font-size:52px;
+max-width:900px;
+margin-bottom:20px;
+background:linear-gradient(90deg,#fff,#d4af37);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero p{
+max-width:650px;
+opacity:.85;
+color:var(--text-muted);
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 35px;
+border-radius:50px;
+background:linear-gradient(135deg,var(--primary),var(--gold-light));
+color:#000;
+font-weight:bold;
+text-decoration:none;
+transition:.3s;
+box-shadow:0 10px 30px rgba(212,175,55,.3);
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 20px 40px rgba(212,175,55,.4);
+}
+
+/* ================= PACKAGES ================= */
+
+.packages{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+margin-top:60px;
+}
+
+.card{
+flex:1 1 280px;
+max-width:350px;
+background:rgba(17,24,39,.7);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:25px;
+transition:.4s;
+position:relative;
+border:1px solid rgba(255,255,255,.05);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,.6);
+}
+
+.card.popular{
+border:2px solid var(--primary);
+transform:scale(1.05);
+}
+
+.price{
+font-size:32px;
+color:var(--primary);
+margin:20px 0;
+}
+
+ul{
+text-align:right;
+margin-top:15px;
+}
+
+ul li{
+margin:10px 0;
+color:var(--text-muted);
+}
+
+/* ================= PORTFOLIO ================= */
+
+.portfolio{
+background:#0f172a;
+text-align:center;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+margin-top:50px;
+}
+
+.project-card{
+background:var(--card-2);
+border-radius:25px;
+overflow:hidden;
+transition:.4s;
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:.4s;
+}
+
+.project-card:hover img{
+transform:scale(1.08);
+}
+
+.project-info{
+padding:25px;
+}
+
+.project-info h3{
+margin-bottom:10px;
+}
+
+.project-info a{
+color:var(--primary);
+text-decoration:none;
+font-weight:bold;
+}
+
+/* ================= TESTIMONIALS ================= */
+
+.testimonials{
+display:flex;
+flex-wrap:wrap;
+gap:30px;
+justify-content:center;
+margin-top:60px;
+}
+
+.testimonial{
+background:var(--card);
+padding:35px;
+border-radius:25px;
+max-width:400px;
+border:1px solid rgba(255,255,255,.05);
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+
+.testimonial p{
+color:var(--text-muted);
+}
+
+/* ================= QR ================= */
+
+.qr-section{
+text-align:center;
+}
+
+.qr-box{
+background:var(--card);
+display:inline-block;
+padding:30px;
+border-radius:25px;
+box-shadow:0 20px 50px rgba(0,0,0,.6);
+transition:.4s;
+}
+
+.qr-box:hover{
+transform:scale(1.05);
+}
+
+.qr-box img{
+width:180px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+.qr-box p{
+opacity:.7;
+font-size:14px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+text-align:center;
+padding:40px;
+background:#0b1120;
+opacity:.6;
+font-size:14px;
+}
+
+/* ================= FADE ================= */
+
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+.hero h1{
+font-size:42px;
+}
+}
+
+@media(max-width:768px){
+
+section{
+padding:70px 5%;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.packages{
+flex-direction:column;
+align-items:center;
+}
+
+.testimonials{
+flex-direction:column;
+align-items:center;
+}
+
+.project-card img{
+height:200px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero fade">
+<h1>صفحة هبوط تصنع الفرق بين زيارة… وعميل يدفع</h1>
+<p>أصمم لك صفحة احترافية موجهة للسوق السعودي ترفع معدل التحويل وتضاعف نتائج إعلاناتك خلال أيام.</p>
+<a href="https://wtsi.me/967779720318" class="btn">ابدأ الآن عبر واتساب</a>
+</section>
+
+<section class="fade">
+<h2 style="text-align:center;">الباقات</h2>
+
+<div class="packages">
+
+<div class="card">
+<h3>الباقة الأساسية</h3>
+<div class="price">99 ريال</div>
+<ul>
+<li>تصميم صفحة بسيطة</li>
+<li>متوافقة مع الجوال</li>
+<li>زر واتساب مباشر</li>
+<li>تسليم خلال 7 أيام</li>
+</ul>
+<a href="https://wtsi.me/967779720318" class="btn">اختر الباقة</a>
+</div>
+
+<div class="card popular">
+<h3>الباقة المتقدمة</h3>
+<div class="price">159 ريال</div>
+<ul>
+<li>تصميم احترافي مخصص</li>
+<li>صياغة تسويقية مقنعة</li>
+<li>تحسين ترتيب الأقسام</li>
+<li>تهيئة سرعة الصفحة</li>
+<li>تسليم خلال 5 أيام</li>
+</ul>
+<a href="https://wtsi.me/967779720318" class="btn">الأكثر طلباً</a>
+</div>
+
+<div class="card">
+<h3>الباقة الاحترافية</h3>
+<div class="price">299 ريال</div>
+<ul>
+<li>تحليل سلوك العميل</li>
+<li>تصميم فخم مخصص بالكامل</li>
+<li>كتابة نص احترافي</li>
+<li>قسم تقييمات احترافي</li>
+<li>تعديلات مفتوحة 3 أيام</li>
+<li>تسليم خلال 3 أيام</li>
+</ul>
+<a href="https://wtsi.me/967779720318" class="btn">اختر الباقة</a>
+</div>
+
+</div>
+</section>
+
+<section class="portfolio">
+<h2>أعمالي السابقة</h2>
+
+<div class="projects">
+
+<div class="project-card">
+
+<div class="project-info">
+<h3>منصة ANA</h3>
+<a href="https://ana.xo.je/" target="_blank">زيارة الموقع</a>
+</div>
+</div>
+
+<div class="project-card">
+
+<div class="project-info">
+<h3>موقعي الشخصي</h3>
+<a href="https://abrar-moh-k.netlify.app/" target="_blank">زيارة الموقع</a>
+</div>
+</div>
+
+</div>
+</section>
+<section class="fade">
+<h2 style="text-align:center;">آراء العملاء</h2>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>“طلبت صفحة هبوط لحملة إعلانية في الرياض، والنتيجة كانت زيادة واضحة في الطلبات خلال أسبوع.”</p>
+<strong>— خالد | متجر إلكتروني</strong>
+</div>
+
+<div class="testimonial">
+<p>“احترافية عالية وسرعة في التنفيذ، أنصح أي صاحب مشروع يتعامل معها.”</p>
+<strong>— سارة | مشروع ناشئ</strong>
+</div>
+
+</div>
+</section>
+
+<section style="text-align:center;" class="fade">
+<h2>جاهز تبدأ؟</h2>
+<p>التسليم من 3 إلى 7 أيام فقط.</p>
+<a href="https://wtsi.me/967779720318" class="btn">تواصل الآن</a>
+</section>
+<section class="qr-section fade">
+<h2>تواصل مباشر عبر واتساب</h2>
+
+<div class="qr-box">
+<img src="qr.png" alt="QR Code">
+<p>امسح الباركود للتواصل الفوري</p>
+<a href="https://wtsi.me/967779720318" class="btn">أو اضغط هنا</a>
+</div>
+
+</section>
+<footer>
+© 2026 Abrar Web Solutions
+</footer>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+window.addEventListener('scroll', ()=>{
+fades.forEach(el=>{
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 100){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>
